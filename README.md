@@ -1,14 +1,17 @@
 ## KonuşarakÖğren
 ------------------------------------------
+
 ### Acıklama
 * İlk sayfada hazırlanmış sınavları kullanıcılara gösteriyoruz.
-* Sınava girmek isteyen kullanıcı, girmek istedği sınavın "Sınava Başla" butonuna tıklayarak.Teste başlayabilir.
-* Sag alt köşede buton admin login paneline yönlendirir.
+* Sınava girmek isteyen kullanıcı, girmek istedği sınavın "Sınava Başla" butonuna tıklayarak teste başlayabilir.
+* Sag alt köşedeki buton admin login paneline yönlendirir.
 * Sisteme giriş yapabilmek için 
 * KullanıcıAdı=admin
 * Şifre=123
 * Sisteme giriş yapan admini sınav hazırlama sayfası karşılamaktadır.
 * Adminin hazırladığı sınavları Sınavlar sayfasına giderek silebilir.
+
+
 ------------------------------------------
 ### Gereklilikler
 
