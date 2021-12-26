@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concreate.EntityFrameworkSqlite
+@model List<Exam>
+
+@{
+    ViewData["Title"] = "Quiz";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="text-center">
+    
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Başlık</th>
+                <th scope="col">Tarih</th>
+                <th scope="col">Sil</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.ExamID</th>
+                    <td>@item.Question.Title</td>
+                    <td>@item.Date.ToString("dd-MM-yyyy")</td>
+                    <th scope="col"><a style="width:100px;color:white;"href="/Admin/DeleteExam/@item.ExamID" class="btn btn-danger">Sil</a></th>
+                    @*@{var value = item.Question.Answers.Where(x => x.QuestionId == item.QuestionId);}
+                    @foreach (var answer in value)
+                    {
+                        <a>@answer.QuestionText</a>
+                    }*@
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>

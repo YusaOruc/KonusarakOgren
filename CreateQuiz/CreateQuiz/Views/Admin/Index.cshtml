@@ -1,0 +1,113 @@
+﻿
+@using CreateQuiz.ViewModels
+@model List<Article>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*<h2>@ViewBag.value</h2>*@
+<br />
+
+<link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<style>
+    input:required, select:required {
+        box-shadow: none;
+    }
+
+    input:invalid, select:invalid {
+        box-shadow: 0 0 3px red;
+    } 
+</style>
+<div class="container">
+    
+    <form method="post" action="/Admin/CreateQuiz">
+        <h1>@ViewBag.deneme</h1>
+        @*@foreach (var item in Model)
+        {
+            <p value="1">@item</p>
+            <br />
+        }*@
+        <div class="form-group">
+            <select id="question-select" name="Title" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                <option selected disabled value="">Soru hazırlamak istediğiniz başlığı seçin.</option>
+                @foreach (var item in Model)
+                {
+                    <option value="@item.ArticleTitle" data-content="@item.ArticleText">@item.ArticleTitle</option>
+                }
+
+
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea  name="QuizQuestion" class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+        </div>
+        @{ int j = 1;}
+        <div class="form-group">
+            @for (int i = 0; i < 4; i++)
+            {
+                <hr />
+                <div class="row">
+                    <div class="form-group">
+                        <input type="text" name="answer[@i].QuestionText" placeholder="Soru-@j " class="form-control" id="usr" required>
+                        @{ j = j + 1;}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="form-group">
+                            <input placeholder="A)" name="answer[@i].AnswerA" type="text" class="form-control" id="usr" required>
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="C)" type="text" name="answer[@i].AnswerC" class="form-control" id="usr" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="form-group">
+                            <input placeholder="B)" type="text" name="answer[@i].AnswerB" class="form-control" id="usr" required>
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="D)" type="text" name="answer[@i].AnswerD" class="form-control" id="usr" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4" style="margin:auto">
+                        <select name="answer[@i].RightAnswer" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+                            <option selected disabled value="">Cevap</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <hr />
+            }
+
+
+            <input  class="btn btn-success" type="submit" />
+            <hr />
+
+
+        </div>
+
+
+    </form>
+
+
+
+</div>
+<br />
+<br />
+<br />
+
+<script src="~/bootstrap/js/bootstrap.js"></script>
+
+<script>
+
+    $('#question-select').on('change', function () {
+        $('#exampleFormControlTextarea1').text($('#question-select').find(":selected").attr('data-content'));
+    });
+
+</script>

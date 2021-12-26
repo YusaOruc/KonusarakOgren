@@ -1,0 +1,121 @@
+﻿@model EntityLayer.Concreate.EntityFrameworkSqlite.Exam
+
+@{
+    ViewData["Title"] = "Exam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<style>
+
+    .answer label {
+        cursor:pointer;
+        border-radius: 5px;
+        width: 100%;
+        padding: 5px;
+        min-height: 30px;
+        border: 2px solid lightgrey;
+        color:#000;
+    }
+    .answer input[type="radio"]{
+        display:none;
+    }
+        .answer input[type="radio"]:checked + label {
+            border-color: #0069d9;
+            background: #0069d9;
+            color: white;
+            font-weight: bolder;
+        }
+
+    .answer-success {
+        background: var(--bs-success) !important;
+        border-color: var(--bs-success) !important;
+    }
+
+    .answer-danger {
+        background: var(--bs-danger) !important;
+        border-color: var(--bs-danger) !important;
+    }
+
+</style>
+<div class="container">
+
+    <form id="form-exam">
+        
+        <div class="form-group">
+            <div class="form-group">
+                
+                <h2 style="text-align:center">@Model.Question.Title</h2>
+            </div>
+        </div>
+        <div class="form-group">
+            <p>@Model.Question.QuizQuestion</p>
+          </div>
+
+        <div class="form-group">
+              <hr />
+              <div class="row">
+                  @{ var number = 1;}
+                  @foreach (var item in Model.Question.Answers.Where(x => x.QuestionId == Model.QuestionId).ToList())
+                  {
+
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label>@number ) @item.QuestionText</label>
+                          <input class="qids" type="hidden" name="q[@number].QuestionID" value="@item.AnswerId" />
+                          @*<input type="text" name="" placeholder="@item.QuestionText" class="form-control" id="usr">*@
+
+                      </div>
+
+
+
+                      <div class="form-group answer">
+                          <input required type="radio" id="optionA @number" name="answer_@number" value="A" />
+                          <label class="answer-text" for="optionA @number">A) @item.AnswerA</label>
+                      </div>
+                      <div class="form-group answer">
+                          <input required type="radio" id="optionC @number" name="answer_@number" value="B" />
+                          <label class="answer-text" for="optionC @number">B) @item.AnswerB</label>
+                      </div>
+
+
+                      <div class="form-group answer">
+                          <input required type="radio" id="optionB @number" name="answer_@number" value="C" />
+                          <label class="answer-text" for="optionB @number">C) @item.AnswerC</label>
+                      </div>
+                      <div class="form-group answer">
+                          <input required type="radio" id="optionD @number" name="answer_@number" value="D" />
+                          <label class="answer-text" for="optionD @number">D) @item.AnswerD</label>
+                      </div>
+                      <hr />
+                      <br /><br />
+                      @{ number += 1;}
+                  </div>
+                      
+
+                  }
+              </div>
+              <button id="submit-btn" type="button" style="color:white" class="btn btn-success">Sınavı Bitir</button>
+              <hr />
+
+
+        </div>
+
+
+    </form>
+
+
+
+</div>
+<br />
+<br />
+<br />
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script src="~/bootstrap/js/bootstrap.js"></script>
+
+<script src="~/ajaxHelper/examValidationAjax.js"></script>
+

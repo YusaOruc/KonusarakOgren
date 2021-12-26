@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concreate.EntityFrameworkSqlite
+@model List<Exam>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-md-4">
+
+            <div class="card" style="width: 20rem;">
+
+                <div class="card-body">
+                    <h5 class="card-title">@item.Question.Title</h5>
+
+                    <a style="width:100%" href="/Home/Exam/@item.ExamID" class="btn btn-primary">Sınava Başla</a>
+                </div>
+            </div>
+            <br />
+        </div>
+
+    }
+
+
+</div>
+
+
