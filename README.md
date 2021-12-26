@@ -1,4 +1,4 @@
-## KonuşarakÖğren
+## KonusarakOgren
 ------------------------------------------
 
 ### Acıklama
