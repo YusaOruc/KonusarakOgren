@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AsQyO8IyG9WoYKinK5zAfZdar87bfXfw0Y19n99WHmo8Zf1KM3JZsEVRCe5fyPr5MbPTUA8Pyv83xn/Lf9b62A==",
+  "dgSpecHash": "ImDjT9sxvHfOvJu0jlOOuApk/GuMMeyRpslOHrkSA0yRJu0rpra6Fswjn9FxgxXU3OEQu9lbRvXSdYfDUDnJCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yusa\\source\\repos\\CreateQuiz\\CreateQuiz\\CreateQuiz.csproj",
+  "projectFilePath": "C:\\Users\\Yusa\\Desktop\\KonusarakOgren\\CreateQuiz\\CreateQuiz\\CreateQuiz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yusa\\.nuget\\packages\\bootstrap\\5.1.2\\bootstrap.5.1.2.nupkg.sha512",
     "C:\\Users\\Yusa\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
@@ -52,6 +52,7 @@
     "C:\\Users\\Yusa\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\5.0.2\\microsoft.visualstudio.web.codegeneration.utils.5.0.2.nupkg.sha512",
     "C:\\Users\\Yusa\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\5.0.2\\microsoft.visualstudio.web.codegenerators.mvc.5.0.2.nupkg.sha512",
     "C:\\Users\\Yusa\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\Yusa\\.nuget\\packages\\ninject\\3.3.4\\ninject.3.3.4.nupkg.sha512",
     "C:\\Users\\Yusa\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\Yusa\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\Yusa\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",

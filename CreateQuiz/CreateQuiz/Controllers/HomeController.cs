@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concreate;
+using BusinessLayer.DependencyResolvers;
 using CreateQuiz.Models;
 using DataAccessLayer.Concreate.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
@@ -14,8 +15,12 @@ namespace CreateQuiz.Controllers
 {
     public class HomeController : Controller
     {
-        
-        ExamManager examManager = new ExamManager(new ExamDAL());
+        IExamService examManager;
+        public HomeController()
+        {
+            examManager = InstanceFactory.GetInstance<IExamService>();
+        }
+        //ExamManager examManager = new ExamManager(new ExamDAL());
         public IActionResult Index()
         {
             var values = examManager.GetListAllWithQuestionService();
