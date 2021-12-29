@@ -1,6 +1,7 @@
-﻿var request;
+﻿
 
 $("#submit-btn").on('click', function (event) {
+    var request;
     let kontrol = 0;
     let ans;
 
@@ -13,16 +14,12 @@ $("#submit-btn").on('click', function (event) {
     }
 
     if (kontrol < 4) {
-        if (request) {
-            request.abort();
-        }
+        
         var $form = $('#form-exam');
 
         var $inputs = $form.find("input, select, button, textarea");
 
-        var serializedData = $form.serialize();
 
-        let fd = new FormData;
 
         let qids = "";
         $('.qids').each(function () {
